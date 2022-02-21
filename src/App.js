@@ -11,42 +11,42 @@ function App() {
     {
      "title": "Мужские Кроссовки Nike Blazer Mid Suede",
      "price": 12999,
-     "imageUrl": "/img/sneakers/1.jpg"
+     "imageUrl": "img/sneakers/1.jpg"
     },
     {
      "title": "Мужские Кроссовки Nike Air Max 270",
      "price": 15600,
-     "imageUrl": "/img/sneakers/2.jpg"
+     "imageUrl": "img/sneakers/2.jpg"
     },
     {
      "title": "Мужские Кроссовки Nike Blazer Mid Suede",
      "price": 89455,
-     "imageUrl": "/img/sneakers/3.jpg"
+     "imageUrl": "img/sneakers/3.jpg"
     },
     {
      "title": "Кроссовки Puma X Aka Boku Future Rider",
      "price": 13455,
-     "imageUrl": "/img/sneakers/4.jpg"
+     "imageUrl": "img/sneakers/4.jpg"
     },
     {
      "title": "Кроссовки Puma X Aka Boku Future Rider",
      "price": 13455,
-     "imageUrl": "/img/sneakers/5.jpg"
+     "imageUrl": "img/sneakers/5.jpg"
     },
     {
      "title": "Кроссовки Puma X Aka Boku Future Rider",
      "price": 89455,
-     "imageUrl": "/img/sneakers/6.jpg"
+     "imageUrl": "img/sneakers/6.jpg"
     },
     {
      "title": "Кроссовки Puma X Aka Boku Future Rider",
      "price": 65645,
-     "imageUrl": "/img/sneakers/7.jpg"
+     "imageUrl": "img/sneakers/7.jpg"
     },
     {
      "title": "Кроссовки Puma X Aka Boku Future Rider",
      "price": 15154,
-     "imageUrl": "/img/sneakers/7.jpg"
+     "imageUrl": "img/sneakers/7.jpg"
     }
    ]);
   const [cartOpened, setCartOpened] = React.useState(false);
@@ -68,7 +68,7 @@ function App() {
         <div className="d-flex align-center justify-between mb-40">
           <h1>Все крассовки</h1>
           <div className="search-block d-flex">
-            <img src="/img/search.svg" alt="Search"/>
+            <img src="img/search.svg" alt="Search"/>
             <input placeholder="Поиск..."/>
           </div>
         </div>

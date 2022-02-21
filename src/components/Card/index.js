@@ -15,7 +15,7 @@ React.useEffect(()=>{
   return(
     <div className={styles.card}>
       <div className={styles.favorite} onClick={props.onFavorite}>
-        <img src="/img/heart-unliked.svg" alt="Unliked" />
+        <img src="img/heart-unliked.svg" alt="Unliked" />
       </div>
       <img width={133} height={112} src={props.imageUrl} alt="Sneakers" />
       <h5 className="mb-15 mt-15">{props.title}</h5>
@@ -24,7 +24,7 @@ React.useEffect(()=>{
           <span>Цена:</span>
           <b>{props.price} руб.</b>
         </div>
-          <img className={styles.plus} onClick={onClickPlus} width={30} height={30} src={isAdded ? "/img/btn-checked.svg" : "/img/btn-plus.svg"} alt="Plus" />
+          <img className={styles.plus} onClick={onClickPlus} width={30} height={30} src={isAdded ? "img/btn-checked.svg" : "img/btn-plus.svg"} alt="Plus" />
       </div>
     </div>
   );
