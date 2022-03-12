@@ -1,13 +1,27 @@
 import React from 'react'
 
+import btnRemove from './../assets/img/btn-remove.svg'
+// import emptyCart from './../assets/img/empty-cart.jpg'
+import arrow from './../assets/img/arrow.svg'
+
 export default function Drawer({ onClose, onRempve, items = [] }) {
   return (
     <div className="overlay">
       <div className="drawer">
         <h2 className="d-flex justify-between mb-30">
           Корзина
-          <img onClick={onClose} className="removeBtn cu-p" src="/img/btn-remove.svg" alt="Remove"/>
+          <img onClick={onClose} className="removeBtn cu-p" src={btnRemove} alt="Remove"/>
         </h2>
+
+        <div className="cartEmpty d-flex align-center justify-content flex-column flex">
+          {/* <img className="mb-20" width="120px" height="120px" src={emptyCart} alt=""/> */}
+          <h2>Корзина пустая</h2>
+          <p className='opacity-6'>Добавьте хотя бы одну пару крассовок, чтобы сделать заказ</p>
+          <button className="greenButton">
+            <img src={arrow} alt="Arrow" />
+            Вернутся назад
+          </button>
+        </div>
           
         <div className="items">
           {
@@ -44,7 +58,7 @@ export default function Drawer({ onClose, onRempve, items = [] }) {
           </ul>
           <button className="greenButton">
             Оформить заказ 
-            <img src="/img/arrow.svg" alt="Arrow"/> 
+            <img src={arrow} alt="Arrow"/> 
           </button>  
         </div>      
       </div>

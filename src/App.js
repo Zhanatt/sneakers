@@ -4,7 +4,13 @@ import Card from './components/Card'
 import Drawer from './components/Drawer';
 import Header from './components/Header';
 
+import search from './../src/assets/img/search.svg'
+
+
+
+
 function App() {
+  
   const [items, setItems] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
@@ -12,6 +18,7 @@ function App() {
 
   React.useEffect(() => {
     axios.get('https://6212081301ccdac074305751.mockapi.io/items').then(res => {
+      console.log(res.data)
       setItems(res.data);
     });
     axios.get('https://6212081301ccdac074305751.mockapi.io/cart').then(res => {
@@ -25,7 +32,7 @@ function App() {
   };
 
   const onRempveItem = (id)=>{
-    // axios.delete(`https://6212081301ccdac074305751.mockapi.io/cart/${id}`);
+    axios.delete(`https://6212081301ccdac074305751.mockapi.io/cart/${id}`);
     setCartItems(prev => prev.filter(item => item.id !== id))
   };
 
@@ -46,7 +53,7 @@ function App() {
         <div className="d-flex align-center justify-between mb-40">
           <h1>{searchValue ? `Поиск по запросу: "${searchValue}"` : "Все кроссовки"}</h1>
           <div className="search-block d-flex">
-            <img src="/img/search.svg" alt="Search"/>
+            <img src={search} alt="Search"/>
             {searchValue &&
               <img 
                 onClick={() => setSearchValue('')}
@@ -63,11 +70,13 @@ function App() {
           {
             items.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
             .map((item, index) => (
+              
               <Card 
                 key={index}
                 title={item.title} 
                 price={item.price} 
                 imageUrl={item.imageUrl}
+                
                 onFavorite={()=> console.log("Добавили в закладки")} 
                 onPlus={(obj)=> onAddToCart(obj)}       
               /> 

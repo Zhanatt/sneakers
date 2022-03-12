@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from './Card.module.scss';
 
+import heartUnliked from './../../assets/img/heart-unliked.svg';
+import btnChecked from './../../assets/img/btn-checked.svg';
+import btnPlus from './../../assets/img/btn-plus.svg';
+
+
 
 function Card({ title, imageUrl, price, onFavorite, onPlus }){
-
   const [isAdded, setIsAdded] = React.useState(false);
 
   const onClickPlus = () => {
@@ -14,7 +18,7 @@ function Card({ title, imageUrl, price, onFavorite, onPlus }){
   return(
     <div className={styles.card}>
       <div className={styles.favorite} onClick={onFavorite}>
-        <img src="/img/heart-unliked.svg" alt="Unliked" />
+        <img src={heartUnliked} alt="Unliked" />
       </div>
       <img width={133} height={112} src={imageUrl} alt="Sneakers" />
       <h5 className="mb-15 mt-15">{title}</h5>
@@ -28,7 +32,7 @@ function Card({ title, imageUrl, price, onFavorite, onPlus }){
           width={30} 
           height={30} 
           onClick={onClickPlus} 
-          src={isAdded ? "/img/btn-checked.svg" : "/img/btn-plus.svg"} 
+          src={isAdded ? {btnChecked} : {btnPlus}} 
           alt={isAdded ? "Checked" : "Plus"} 
         />
       </div>
@@ -36,3 +40,5 @@ function Card({ title, imageUrl, price, onFavorite, onPlus }){
   );
 }
 export default Card;
+
+
